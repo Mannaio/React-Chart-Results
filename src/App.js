@@ -4,11 +4,14 @@ import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 
-const API_KEY = "3585775f387b0d0cba6c5b3dc41b8167";
+const API_KEY = "f4e8d4eb582a1977e7207ab08670e022";
+
+// password openweathermap 575aGDCAzLzfCRr
 
 class App extends React.Component {
   state = {
     temperature: undefined,
+    wind: undefined,
     city: undefined,
     country: undefined,
     humidity: undefined,
@@ -24,6 +27,7 @@ class App extends React.Component {
     if (city && country) {
       this.setState({
         temperature: data.main.temp,
+        wind: data.wind.speed,
         city: data.name,
         country: data.sys.country,
         humidity: data.main.humidity,
@@ -33,6 +37,7 @@ class App extends React.Component {
     } else {
       this.setState({
         temperature: undefined,
+        wind: undefined,
         city: undefined,
         country: undefined,
         humidity: undefined,
@@ -53,8 +58,9 @@ class App extends React.Component {
                 </div>
                 <div className="col-xs-7 form-container">
                   <Form getWeather={this.getWeather} />
-                  <Weather 
-                    temperature={this.state.temperature} 
+                  <Weather
+                    temperature={this.state.temperature}
+                    wind={this.state.wind}
                     humidity={this.state.humidity}
                     city={this.state.city}
                     country={this.state.country}
