@@ -6,27 +6,51 @@ import Weather from "./components/Weather";
 
 const API_KEY = "f4e8d4eb582a1977e7207ab08670e022";
 
+// http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
+// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
+// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=5&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
+
+
 class App extends React.Component {
   state = {
     isLoading: true,
+    error: null,
     temperature: undefined,
-    error: null
+    pressure: undefined,
+    humidity: undefined,
+    windspeed: undefined,
+    winddeg: undefined,
+    clouds: undefined,
+    sunrise: undefined,
+    sunset: undefined
   }
 
   componentDidMount() {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric`)
-      .then(res => res.json())
-      .then(json => {
-        // console.log(json);
-        this.setState({
-          temperature: json.main.temp,
-          isLoading: false
-        });
-      });
+    this.setState({ isLoading: true });
+
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric')
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong ...');
+        }
+      })
+      .then(data => this.setState({ temperature: data.main.temp, isLoading: false }))
+      .catch(error => this.setState({ error, isLoading: false }));
   }
 
   render() {
-    const { isLoading, temperature } = this.state;
+    const { isLoading, temperature, error } = this.state;
+
+    if (isLoading) {
+      return <p>Loading ...</p>;
+    }
+
+    if (error) {
+      return <p>Error...</p>;
+    }
+
     return (
       <div>
         <div className="wrapper">
