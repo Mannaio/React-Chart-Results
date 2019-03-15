@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from 'axios';
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
@@ -9,39 +9,30 @@ const API_KEY = "f4e8d4eb582a1977e7207ab08670e022";
 // http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
 // http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
 // http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=5&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
-
+// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=10&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric
 
 class App extends React.Component {
   state = {
+    list:[],
     isLoading: true,
-    error: null,
-    temperature: undefined,
-    pressure: undefined,
-    humidity: undefined,
-    windspeed: undefined,
-    winddeg: undefined,
-    clouds: undefined,
-    sunrise: undefined,
-    sunset: undefined
   }
 
   componentDidMount() {
     this.setState({ isLoading: true });
-
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric')
+    var url = "http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=10&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric"
+    fetch(url)
       .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Something went wrong ...');
-        }
+        return response.json();
       })
-      .then(data => this.setState({ temperature: data.main.temp, isLoading: false }))
+      .then(d => {
+        this.setState({ list: d, isLoading: false });
+        console.log("state", this.state.list)
+      })
       .catch(error => this.setState({ error, isLoading: false }));
   }
 
   render() {
-    const { isLoading, temperature, error } = this.state;
+    const { isLoading, error, list:[] } = this.state;
 
     if (isLoading) {
       return <p>Loading ...</p>;
@@ -61,9 +52,6 @@ class App extends React.Component {
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
-                  <Weather
-                    temperature={this.state.temperature}
-                  />
                 </div>
               </div>
             </div>
