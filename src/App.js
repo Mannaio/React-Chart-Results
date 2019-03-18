@@ -12,9 +12,10 @@ const API_KEY = "f4e8d4eb582a1977e7207ab08670e022";
 // http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=10&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric
 
 class App extends React.Component {
+
   state = {
-    list:[],
     isLoading: true,
+    list: [],
   }
 
   componentDidMount() {
@@ -32,7 +33,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isLoading, error, list:[] } = this.state;
+    const { isLoading, error, list } = this.state;
 
     if (isLoading) {
       return <p>Loading ...</p>;
@@ -42,23 +43,22 @@ class App extends React.Component {
       return <p>Error...</p>;
     }
 
-    return (
-      <div>
-        <div className="wrapper">
-          <div className="main">
-            <div className="container">
-              <div className="row">
-                <div className="col-xs-5 title-container">
-                  <Titles />
-                </div>
-                <div className="col-xs-7 form-container">
-                </div>
-              </div>
-            </div>
+
+    if (this.state.list.list && this.state.list.list.length > 0) {
+      return (
+          <div>
+              {
+                  this.state.list.list.map((d, index) =>
+                      <div key={index}>
+                          {d.dt_txt}
+                      </div>
+                  )
+              }
           </div>
-        </div>
-      </div>
-    );
+      );
+    }
+
+    return null
   }
 };
 
