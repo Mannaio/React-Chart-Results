@@ -2,14 +2,8 @@ import React from "react";
 import axios from 'axios';
 import Titles from "./components/Titles";
 import Form from "./components/Form";
-import Weather from "./components/Weather";
 
-const API_KEY = "f4e8d4eb582a1977e7207ab08670e022";
-
-// http://api.openweathermap.org/data/2.5/weather?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
-// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
-// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=5&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric //
-// http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=10&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric
+const API_KEY = "";
 
 class App extends React.Component {
 
@@ -20,7 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.setState({ isLoading: true });
-    var url = "http://api.openweathermap.org/data/2.5/forecast?q=Tarifa,ES&&cnt=10&appid=f4e8d4eb582a1977e7207ab08670e022&units=metric"
+    var url = ""
     fetch(url)
       .then(response => {
         return response.json();
@@ -50,7 +44,6 @@ class App extends React.Component {
               {
                   this.state.list.list.map((d, index) =>
                       <div key={index}>
-                          {d.dt_txt}
                       </div>
                   )
               }
