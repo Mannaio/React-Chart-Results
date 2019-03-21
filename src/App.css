@@ -7,7 +7,6 @@ body {
 }
 
 .wrapper {
-  background: linear-gradient(to right, #e67e22, #e74c3c);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -24,7 +23,6 @@ body {
 
 .title-container {
   height: 90vh;
-  background: url("img/bg.jpg") center center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -49,7 +47,6 @@ body {
 }
 
 .form-container {
-  background-color: #2c3e50;
   height: 90vh;
   padding-top: 100px;
   padding-left: 50px;
@@ -61,7 +58,7 @@ input[type="text"] {
   border-bottom: solid 1px #f16051;
   width: 30%;
   padding-bottom: 4px;
-  color: #fff !important;
+  color: #f16050 !important;
   font-weight: lighter;
   letter-spacing: 2px;
   margin-bottom: 30px;
@@ -69,7 +66,7 @@ input[type="text"] {
   font-size: 20px;
 }
 
-input[type="text"] { 
+input[type="text"] {
     outline: none;
 }
 
