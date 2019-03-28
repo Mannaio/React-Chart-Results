@@ -1,3 +1,5 @@
+export const liga = ['Atletico', 'Barcelona', 'Betis', 'Real', 'Sevilla', 'Valencia', 'Villareal'];
+
 export const data = [
   { day: '15', Atletico: 0, Barcelona: 0, Betis: 0, Real: 0, Sevilla: 0, Valencia: 0, Villareal: 0},
   { day: '16', Atletico: 2, Barcelona: 2, Betis: 2, Real: 0, Sevilla: 0, Valencia: 0, Villareal: 0},

@@ -2,36 +2,43 @@ import React from "react";
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
-import { data } from './utils/TeamStats';
+import { data, liga } from './utils/TeamStats';
 
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 const initialState = {
+  liga,
   data,
-  hometeamValue: '',
-  awayteamValue: ''
+  homeTeam: '',
+  awayTeam: ''
 };
+
+const listItems = liga.map((name) =>
+  <option key={name}>
+    {name}
+  </option>
+);
 
 class App extends React.Component {
   state = initialState;
 
   handleChangeHomeTeam = (e) => {
     this.setState({
-      hometeamValue: e.target.value,
+      homeTeam: e.target.value,
     });
   };
 
   handleChangeAwayTeam = (e) => {
     this.setState({
-      awayteamValue: e.target.value,
+      awayTeam: e.target.value,
     });
   };
 
   render() {
 
-    const { data } = this.state;
+    const { data, liga } = this.state;
 
     return (
       <div>
@@ -45,22 +52,10 @@ class App extends React.Component {
                 <div className="col-xs-7 form-container">
                 Pick your favorite Team:
                 <select value={this.state.value} onChange={this.handleChangeHomeTeam}>
-                  <option value="Atletico">Atletico</option>
-                  <option value="Barcelona">Barcelona</option>
-                  <option value="Betis">Betis</option>
-                  <option value="Real">Real</option>
-                  <option value="Sevilla">Sevilla</option>
-                  <option value="Valencia">Valencia</option>
-                  <option value="Villareal">Villareal</option>
+                  {listItems}
                 </select>
                 <select value={this.state.value} onChange={this.handleChangeAwayTeam}>
-                  <option value="Atletico">Atletico</option>
-                  <option value="Barcelona">Barcelona</option>
-                  <option value="Betis">Betis</option>
-                  <option value="Real">Real</option>
-                  <option value="Sevilla">Sevilla</option>
-                  <option value="Valencia">Valencia</option>
-                  <option value="Villareal">Villareal</option>
+                  {listItems}
                 </select>
                   <LineChart
                     width={500}
@@ -75,8 +70,8 @@ class App extends React.Component {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type='monotone' dataKey={this.state.hometeamValue} stroke='#c60000' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
-                    <Line type='monotone' dataKey={this.state.awayteamValue} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
+                    <Line type='monotone' dataKey={this.state.homeTeam} stroke='#c60000' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
+                    <Line type='monotone' dataKey={this.state.awayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
                   </LineChart>
                 </div>
               </div>
