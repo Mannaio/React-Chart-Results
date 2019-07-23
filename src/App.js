@@ -19,6 +19,15 @@ const listItems = liga.map((name) =>
   </option>
 );
 
+const description = ({homeTeam, awayTeam}) => (
+  <div className="description">
+    <p>Home Team:</p>
+    <p>Stronger Team:</p>
+    <p>Average Home Team:</p>
+    <p>Average Away Team:</p>
+  </div>
+);
+
 class App extends React.Component {
   state = initialState;
 
