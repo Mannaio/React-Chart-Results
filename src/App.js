@@ -48,7 +48,7 @@ class App extends React.Component {
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
-                Pick your favorite Team:
+                Pick the teams:
                 <select value={this.state.value} onChange={this.handleChangeHomeTeam}>
                   {listItems}
                 </select>
@@ -68,9 +68,14 @@ class App extends React.Component {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type='monotone' dataKey={this.state.homeTeam} stroke='#c60000' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
+                    <Line type='monotone' dataKey={this.state.homeTeam} stroke='#c60000' activeDot={{fill: '#c60000', stroke: 'none', r: 6}}/>
                     <Line type='monotone' dataKey={this.state.awayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
                   </LineChart>
+                  <p>Home Team:{this.state.homeTeam}</p>
+                  <p>Away Team:{this.state.awayTeam}</p>
+                  <p>Stronger Team:</p>
+                  <p>Average Home Team:</p>
+                  <p>Average Away Team:</p>
                 </div>
               </div>
             </div>
