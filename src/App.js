@@ -76,6 +76,7 @@ class App extends React.Component {
                   <p>Stronger Team:</p>
                   <p>Average Home Team:</p>
                   <p>Average Away Team:</p>
+                  <p>Description:</p>
                 </div>
               </div>
             </div>
