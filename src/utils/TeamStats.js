@@ -2,8 +2,9 @@ export const liga = ['Alaves','Atletico', 'Barcelona', 'Betis', 'Bilbao', 'Celta
 
 export const scores = [
   { day: '1', Alaves: 0, Atletico: 0, Barcelona: 0, Betis: 0, Bilbao: 0, Celta: 0, Espanyol: 0, Getafe: 0, Granada: 0, Leganes:  0, Levante: 0, Eibar: 0, Mallorca: 0, Osasuna: 0, Real: 0, Sevilla: 0, Sociedad: 0, Valencia: 0, Valladolid: 0, Villareal: 0},
-  { day: '2', Alaves: 0, Atletico: 0, Barcelona: -1, Betis: -3, Bilbao: 0, Celta: -3, Espanyol: -3, Getafe: -2, Granada: 0, Leganes:  -3, Levante: -2, Eibar: -2, Mallorca: 0, Osasuna: 2, Real: 2, Sevilla: 2, Sociedad: 0, Valencia: -2, Valladolid: 2, Villareal: -2},
-  { day: '3', Alaves: -2, Atletico: 2, Barcelona: -1, Betis: -4, Bilbao: 0, Celta: -3, Espanyol: -3, Getafe: -4, Granada: -3, Leganes:  -6, Levante: -2, Eibar: -2, Mallorca: -3, Osasuna: 0, Real: 0, Sevilla: 4, Sociedad: 2, Valencia: -3, Valladolid: 2, Villareal: -3},
+  { day: '2', Alaves: 0, Atletico: 0, Barcelona: -1, Betis: -3, Bilbao: 0, Celta: -3, Espanyol: -3, Getafe: -1, Granada: 0, Leganes:  -3, Levante: -1, Eibar: -1, Mallorca: 0, Osasuna: 2, Real: 2, Sevilla: 2, Sociedad: 0, Valencia: -2, Valladolid: 2, Villareal: -2},
+  { day: '3', Alaves: -2, Atletico: 2, Barcelona: -1, Betis: -4, Bilbao: 0, Celta: -3, Espanyol: -3, Getafe: -3, Granada: -3, Leganes:  -6, Levante: -1, Eibar: -1, Mallorca: -3, Osasuna: 0, Real: 0, Sevilla: 4, Sociedad: 2, Valencia: -3, Valladolid: 2, Villareal: -3},
+  { day: '3', Alaves: -2, Atletico: 2, Barcelona: -1, Betis: -4, Bilbao: 0, Celta: -3, Espanyol: -6, Getafe: -5, Granada: -1, Leganes:  -7, Levante: -1, Eibar: -2, Mallorca: -4, Osasuna: -2, Real: 0, Sevilla: 2, Sociedad: 1, Valencia: -3, Valladolid: 1, Villareal: -5},
 ];
 
 
