@@ -1,6 +1,6 @@
 import React from "react";
 import Titles from "./components/Titles";
-import { data, liga } from './utils/TeamStats';
+import { scores, liga } from './utils/TeamStats';
 
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   liga,
-  data,
+  scores,
   homeTeam: '',
   awayTeam: ''
 };
@@ -18,6 +18,13 @@ const listItems = liga.map((name) =>
     {name}
   </option>
 );
+
+const getAverage = team => {
+  if (isNaN(scores[0][team])) return null;
+
+  return scores.map(x => x[team]).reduce((a, c) => a + c) / scores.length;
+};
+
 
 class App extends React.Component {
   state = initialState;
@@ -36,8 +43,6 @@ class App extends React.Component {
 
   render() {
 
-    const { data, liga } = this.state;
-
     return (
       <div>
         <div className="wrapper">
@@ -48,7 +53,7 @@ class App extends React.Component {
                   <Titles />
                 </div>
                 <div className="col-xs-7 form-container">
-                Pick the teams:
+                Pick the scores:
                 <select value={this.state.value} onChange={this.handleChangeHomeTeam}>
                   {listItems}
                 </select>
@@ -58,7 +63,7 @@ class App extends React.Component {
                   <LineChart
                     width={500}
                     height={300}
-                    data={data}
+                    data={scores}
                     margin={{
                       top: 5, right: 30, left: 20, bottom: 5,
                     }}
@@ -74,8 +79,8 @@ class App extends React.Component {
                   <p>Home Team:{this.state.homeTeam}</p>
                   <p>Away Team:{this.state.awayTeam}</p>
                   <p>Stronger Team:</p>
-                  <p>Average Home Team:</p>
-                  <p>Average Away Team:</p>
+                  <p>Average {this.state.homeTeam}:{getAverage(this.state.homeTeam)}</p>
+                  <p>Average {this.state.awayTeam}:{getAverage(this.state.awayTeam)}</p>
                   <p>Description:</p>
                 </div>
               </div>
