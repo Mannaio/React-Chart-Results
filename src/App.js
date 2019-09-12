@@ -25,6 +25,10 @@ const getAverage = team => {
   return scores.map(x => x[team]).reduce((a, c) => a + c) / scores.length;
 };
 
+const maxAverage = teams => {
+  return teams.map(team => {return { team:team, avg: getAverage(team)}}).reduce((a,b)=>a.avg>b.avg?a:b).team
+};
+
 
 class App extends React.Component {
   state = initialState;
@@ -76,12 +80,12 @@ class App extends React.Component {
                     <Line type='monotone' dataKey={this.state.homeTeam} stroke='#c60000' activeDot={{fill: '#c60000', stroke: 'none', r: 6}}/>
                     <Line type='monotone' dataKey={this.state.awayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
                   </LineChart>
-                  <p>Home Team:{this.state.homeTeam}</p>
-                  <p>Away Team:{this.state.awayTeam}</p>
-                  <p>Stronger Team:</p>
-                  <p>Average {this.state.homeTeam}:{getAverage(this.state.homeTeam)}</p>
-                  <p>Average {this.state.awayTeam}:{getAverage(this.state.awayTeam)}</p>
-                  <p>Description:</p>
+                  <p>Home Team: {this.state.homeTeam}</p>
+                  <p>Away Team: {this.state.awayTeam}</p>
+                  <p>Average {this.state.homeTeam}: {getAverage(this.state.homeTeam)}</p>
+                  <p>Average {this.state.awayTeam}: {getAverage(this.state.awayTeam)}</p>
+                  <p>Stronger Team: {maxAverage([this.state.homeTeam,this.state.awayTeam])}</p>
+                  <p>Description: There are 3 important factors, the team playing at home, the average score of the teams and the the stronger team</p>
                 </div>
               </div>
             </div>
