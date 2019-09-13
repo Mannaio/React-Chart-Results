@@ -1,6 +1,6 @@
 import React from "react";
-import Titles from "./components/Titles";
 import { scores, liga } from './utils/TeamStats';
+import Table from "./components/Table";
 
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -54,8 +54,17 @@ class App extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-xs-5 title-container">
-                  <Titles />
-                </div>
+              		<h1 className="title-container__title">Team Finder</h1>
+              		<h3 className="title-container__subtitle">Find out the team trend</h3>
+                  <p>Home Team: <span className="strong-red">{this.state.homeTeam}</span></p>
+                  <p>Away Team: <span className="strong-blue">{this.state.awayTeam}</span></p>
+                  <p>Average {this.state.homeTeam}: <span class="strong">{getAverage(this.state.homeTeam)}</span></p>
+                  <p>Average {this.state.awayTeam}: <span class="strong">{getAverage(this.state.awayTeam)}</span></p>
+                  <p>Stronger Team: <span className="strong-red">{maxAverage([this.state.homeTeam,this.state.awayTeam])}</span></p>
+                  <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">Media Inglese calculation</a>.
+                  <Table />
+                  There are three things taken in consideration, the team playing at home, the team playing away and their average. Based on that we can better predict the result.</p>
+              	</div>
                 <div className="col-xs-7 form-container">
                 Pick the scores:
                 <select value={this.state.value} onChange={this.handleChangeHomeTeam}>
@@ -80,12 +89,6 @@ class App extends React.Component {
                     <Line type='monotone' dataKey={this.state.homeTeam} stroke='#c60000' activeDot={{fill: '#c60000', stroke: 'none', r: 6}}/>
                     <Line type='monotone' dataKey={this.state.awayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
                   </LineChart>
-                  <p>Home Team: {this.state.homeTeam}</p>
-                  <p>Away Team: {this.state.awayTeam}</p>
-                  <p>Average {this.state.homeTeam}: {getAverage(this.state.homeTeam)}</p>
-                  <p>Average {this.state.awayTeam}: {getAverage(this.state.awayTeam)}</p>
-                  <p>Stronger Team: {maxAverage([this.state.homeTeam,this.state.awayTeam])}</p>
-                  <p>Description: There are 3 important factors, the team playing at home, the average score of the teams and the the stronger team</p>
                 </div>
               </div>
             </div>
