@@ -39,9 +39,17 @@ body {
 .title-container__subtitle {
   font-style: italic;
   font-weight: 100;
-  letter-spacing: 1px;
   line-height: 1.5;
   font-family: "Merriweather", serif;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.header h3 {
+  font-size: 18px;
+  margin-top: 0px
 }
 
 .table>thead>tr>th {
@@ -49,8 +57,11 @@ body {
 }
 
 .form-container {
-  height: 90vh;
-  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
   padding-left: 50px;
 }
 
