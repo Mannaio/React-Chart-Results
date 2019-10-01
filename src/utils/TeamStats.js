@@ -6,6 +6,9 @@ export const scores = [
   { day: '3', Alaves: -2, Atletico: 2, Barcelona: -1, Betis: -4, Bilbao: 0, Celta: -3, Espanyol: -3, Getafe: -3, Granada: -3, Leganes:  -6, Levante: -1, Eibar: -1, Mallorca: -3, Osasuna: 0, Real: 0, Sevilla: 4, Sociedad: 2, Valencia: -3, Valladolid: 2, Villareal: -3},
   { day: '4', Alaves: -2, Atletico: 2, Barcelona: -1, Betis: -4, Bilbao: 0, Celta: -3, Espanyol: -6, Getafe: -5, Granada: -1, Leganes:  -7, Levante: -1, Eibar: -2, Mallorca: -4, Osasuna: -2, Real: 0, Sevilla: 2, Sociedad: 1, Valencia: -3, Valladolid: 1, Villareal: -5},
   { day: '5', Alaves: -5, Atletico: 1, Barcelona: -1, Betis: -6, Bilbao: 0, Celta: -6, Espanyol: -4, Getafe: -5, Granada: 2, Leganes:  -10, Levante: -2, Eibar: -5, Mallorca: -6, Osasuna: -2, Real: 0, Sevilla: 4, Sociedad: 1, Valencia: -4, Valladolid: -1, Villareal: -3},
+  { day: '6', Alaves: -6, Atletico: -1, Barcelona: -2, Betis: -6, Bilbao: 0, Celta: -6, Espanyol: -7, Getafe: -5, Granada: 2, Leganes:  -10, Levante: -2, Eibar: -5, Mallorca: -7, Osasuna: -2, Real: 2, Sevilla: 1, Sociedad: 3, Valencia: -6, Valladolid: -2, Villareal: -3},
+  { day: '7', Alaves: -7, Atletico: 1, Barcelona: -2, Betis: -6, Bilbao: 0, Celta: -8, Espanyol: -7, Getafe: -5, Granada: 2, Leganes:  -12, Levante: -3, Eibar: -5, Mallorca: -10, Osasuna: -3, Real: 2, Sevilla: 0, Sociedad: 3, Valencia: -8, Valladolid: -4, Villareal: -4},
+  { day: '8', Alaves: -7, Atletico: -1, Barcelona: 0, Betis: -7, Bilbao: -3, Celta: -9, Espanyol: -10, Getafe: -8, Granada: 2, Leganes:  -13, Levante: -5, Eibar: -5, Mallorca: -11, Osasuna: -3, Real: 2, Sevilla: 0, Sociedad: 2, Valencia: -6, Valladolid: -2, Villareal: -4},
 ];
 
 
