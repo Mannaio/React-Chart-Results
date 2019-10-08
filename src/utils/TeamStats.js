@@ -1,4 +1,8 @@
-export const liga = ['Alaves','Atletico', 'Barcelona', 'Betis', 'Bilbao', 'Celta', 'Espanyol', 'Getafe', 'Granada', 'Leganes', 'Levante', 'Eibar', 'Mallorca', 'Osasuna', 'Real', 'Sevilla', 'Sociedad', 'Valencia', 'Valladolid', 'Villareal'];
+// export const leagues = ['Liga', 'SerieA']
+//
+// export const liga = ['Alaves','Atletico', 'Barcelona', 'Betis', 'Bilbao', 'Celta', 'Espanyol', 'Getafe', 'Granada', 'Leganes', 'Levante', 'Eibar', 'Mallorca', 'Osasuna', 'Real', 'Sevilla', 'Sociedad', 'Valencia', 'Valladolid', 'Villareal'];
+//
+// export const serieA = ['Atalanta','Juventus', 'Inter', 'Napoli', 'Roma', 'Lazio', 'Cagliari', 'Torino', 'Parma', 'Fiorentina', 'Bologna', 'Udinese', 'Sassuolo', 'Verona', 'Brescia', 'Milan', 'Lecce', 'Genoa', 'Spal', 'Sampdoria'];
 
 export const scores = [
   { day: '1', Alaves: 0, Atletico: 0, Barcelona: 0, Betis: 0, Bilbao: 0, Celta: 0, Espanyol: 0, Getafe: 0, Granada: 0, Leganes:  0, Levante: 0, Eibar: 0, Mallorca: 0, Osasuna: 0, Real: 0, Sevilla: 0, Sociedad: 0, Valencia: 0, Valladolid: 0, Villareal: 0},
