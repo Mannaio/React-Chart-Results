@@ -1,5 +1,5 @@
 import React from "react";
-import { scores } from './utils/TeamStats';
+import { scores, scoresseriea } from './utils/TeamStats';
 import Table from "./components/Table";
 
 import {
@@ -8,7 +8,7 @@ import {
 
 const data = {
   Liga: ['Alaves','Atletico', 'Barcelona', 'Betis', 'Bilbao', 'Celta', 'Espanyol', 'Getafe', 'Granada', 'Leganes', 'Levante', 'Eibar', 'Mallorca', 'Osasuna', 'Real', 'Sevilla', 'Sociedad', 'Valencia', 'Valladolid', 'Villareal'],
-  Seria: ["Atalanta", "Juventus", "Inter"]
+  Seriea: ['Atalanta', 'Bologna', 'Brescia', 'Cagliari', 'Fiorentina', 'Genoa', 'Inter', 'Juventus', 'Lazio', 'Lecce', 'Milan', 'Napoli', 'Parma', 'Roma', 'Sampdoria', 'Sassuolo', 'Spal', 'Torino', 'Udinese', 'Verona']
 };
 
 const leagues = Object.keys(data);
@@ -24,17 +24,11 @@ const getTeams = league =>
       ))
     : [];
 
-// const initialState = {
-//   scores,
-//   homeTeam: '',
-//   awayTeam: ''
-// };
-
-
 const getAverage = team => {
-  if (isNaN(scores[0][team])) return null;
 
-  return scores.map(x => x[team]).reduce((a, c) => a + c) / scores.length;
+  if (isNaN(scoresseriea[0][team])) return null;
+
+  return scoresseriea.map(x => x[team]).reduce((a, c) => a + c) / scoresseriea.length;
 };
 
 const maxAverage = teams => {
@@ -46,7 +40,7 @@ class App extends React.Component {
   state = {
     selectedLeague: leagues[0],
     selectedTeam: getTeams(leagues[0])[0],
-    scores,
+    scoresseriea,
     homeTeam: '',
     awayTeam: ''
   };
@@ -79,8 +73,8 @@ class App extends React.Component {
                   <div>
                     <p>Home Team: <span className="strong-red">{this.state.homeTeam}</span></p>
                     <p>Away Team: <span className="strong-blue">{this.state.awayTeam}</span></p>
-                    <p>Average {this.state.homeTeam}: <span class="strong">{getAverage(this.state.homeTeam)}</span></p>
-                    <p>Average {this.state.awayTeam}: <span class="strong">{getAverage(this.state.awayTeam)}</span></p>
+                    <p>Average {this.state.homeTeam}: <span className="strong">{getAverage(this.state.homeTeam)}</span></p>
+                    <p>Average {this.state.awayTeam}: <span className="strong">{getAverage(this.state.awayTeam)}</span></p>
                     <p>Stronger Team: <span className="strong-red">{maxAverage([this.state.homeTeam,this.state.awayTeam])}</span></p>
                     <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>.
                     <Table />
@@ -115,7 +109,7 @@ class App extends React.Component {
                   <LineChart
                     width={500}
                     height={300}
-                    data={scores}
+                    data={scoresseriea}
                     margin={{
                       top: 5, right: 30, left: 20, bottom: 5,
                     }}
