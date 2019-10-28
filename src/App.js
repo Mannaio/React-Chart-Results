@@ -32,12 +32,19 @@ const getAverage = (league, team) => {
   return league.map(x => x[team]).reduce((a, c) => a + c) / league.length;
 };
 
+const maxAverage = (league, teams) => {
+  return teams.map(team => {
+      return {
+          team:team,
+          avg: getAverage(scores[league],team)
+      }
+  }).reduce((a,b)=>a.avg>b.avg?a:b).team
+}
+
 
 class App extends React.Component {
   state = {
     selectedLeague: leagues[0],
-    selectedHomeTeam: getTeams(leagues[0])[0],
-    selectedAwayTeam: getTeams(leagues[0])[0],
     scores
   };
 
@@ -74,6 +81,7 @@ class App extends React.Component {
                     <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
                     <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
                     <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
+                    <p>Stronger Team:{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</p>
                     <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>
                     <Table />
                     <h3>Description</h3>
