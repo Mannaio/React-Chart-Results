@@ -81,7 +81,7 @@ class App extends React.Component {
                     <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
                     <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
                     <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
-                    <p>Stronger Team:{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</p>
+                    <p>Stronger Team:<span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
                     <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>
                     <Table />
                     <h3>Description</h3>
