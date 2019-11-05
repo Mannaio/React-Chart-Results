@@ -1,6 +1,6 @@
-@import '/base/custom-media.css';
-@import '/base/variables.css';
-@import '/components/grid.css';
-@import '/components/header.css';
-@import '/components/site.css';
-@import './App.css';
+@import './base/custom-media.css';
+@import './base/variable.css';
+@import './base/elements.css';
+@import './components/grid.css';
+@import './components/header.css';
+@import './components/site.css';
