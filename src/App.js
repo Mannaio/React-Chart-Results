@@ -67,7 +67,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <header className="Site-Header">
+        <header className="Site-header">
           <div className="Header Header--cozy">
             <div className="Header-titles">
               <h1 className="Header-title">The Right Bet</h1>
@@ -75,60 +75,70 @@ class App extends React.Component {
             </div>
           </div>
         </header>
-        <div className="col-xs-5 title-container">
-          <div>
-            <p>Home Team: <span className="strong-red">{this.state.selectedHomeTeam}</span></p>
-            <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
-            <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
-            <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
-            <p>Stronger Team:<span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
-            <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>
-            <Table />
-            <h3>Description</h3>
-            <p>There are three things taken in consideration, the team playing at home, the team playing away and their english average. Based on that we can better predict the matches, gambling on the result which gives a closer score to the average team.
-            It is also important to consider looking at the team charts on the right that like in trade we are introducing some concepts as 'support', 'resistance' and 'consolidation'. Any team on his way has to face this. What does it mean? This means that we also have to take in consideration that the teams have to rest or react at some stages. This can be seen in the charts as an horizontal / flat step before going up or down again.</p>
-            <h3>Tips</h3>
+        <main className="Site-content">
+          <div className="container">
+            <div className="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
+              <div className="Grid-cell">
+                <div>
+                  <p>Home Team: <span className="strong-red">{this.state.selectedHomeTeam}</span></p>
+                  <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
+                  <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
+                  <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
+                  <p>Stronger Team:<span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
+                </div>
+              </div>
+              <div className="Grid-cell">
+              Pick the League
+              <select
+                value={this.state.selectedLeague}
+                onChange={this.handleLeagueChange}
+              >
+                {leagueOptions}
+              </select>
+              Pick the Home Team
+              <select
+                value={this.state.selectedHomeTeam}
+                onChange={this.handleHomeTeamChange}
+              >
+                {getTeams(this.state.selectedLeague)}
+              </select>
+              Pick the Away Team
+              <select
+                value={this.state.selectedAwayTeam}
+                onChange={this.handleAwayTeamChange}
+              >
+                {getTeams(this.state.selectedLeague)}
+              </select>
+                <LineChart
+                  width={500}
+                  height={300}
+                  data={scores[this.state.selectedLeague]}
+                  margin={{
+                    top: 5, right: 30, left: 20, bottom: 5,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="day" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Line type='monotone' dataKey={this.state.selectedHomeTeam} stroke='#c60000' activeDot={{fill: '#c60000', stroke: 'none', r: 6}}/>
+                  <Line type='monotone' dataKey={this.state.selectedAwayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
+                </LineChart>
+              </div>
+            </div>
+            <div className="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
+              <div className="Grid-cell">
+                <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>
+                <Table />
+                <h3>Description</h3>
+                <p>There are three things taken in consideration, the team playing at home, the team playing away and their english average. Based on that we can better predict the matches, gambling on the result which gives a closer score to the average team.
+                It is also important to consider looking at the team charts on the right that like in trade we are introducing some concepts as 'support', 'resistance' and 'consolidation'. Any team on his way has to face this. What does it mean? This means that we also have to take in consideration that the teams have to rest or react at some stages. This can be seen in the charts as an horizontal / flat step before going up or down again.</p>
+                <h3>Tips</h3>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="col-xs-7 form-container">
-        Pick the League
-        <select
-          value={this.state.selectedLeague}
-          onChange={this.handleLeagueChange}
-        >
-          {leagueOptions}
-        </select>
-        Pick the Home Team
-        <select
-          value={this.state.selectedHomeTeam}
-          onChange={this.handleHomeTeamChange}
-        >
-          {getTeams(this.state.selectedLeague)}
-        </select>
-        Pick the Away Team
-        <select
-          value={this.state.selectedAwayTeam}
-          onChange={this.handleAwayTeamChange}
-        >
-          {getTeams(this.state.selectedLeague)}
-        </select>
-          <LineChart
-            width={500}
-            height={300}
-            data={scores[this.state.selectedLeague]}
-            margin={{
-              top: 5, right: 30, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type='monotone' dataKey={this.state.selectedHomeTeam} stroke='#c60000' activeDot={{fill: '#c60000', stroke: 'none', r: 6}}/>
-            <Line type='monotone' dataKey={this.state.selectedAwayTeam} stroke='#132908' activeDot={{fill: '#132908', stroke: 'none', r: 6}}/>
-          </LineChart>
-        </div>
+        </main>
       </div>
     );
   }

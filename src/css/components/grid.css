@@ -1,3 +1,10 @@
+:root {
+  --break-sm: 384px;
+  --break-md: 576px;
+  --break-lg: 768px;
+}
+
+
 .Grid {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +109,7 @@
   }
 }
 
-@media (--break-lg) {
+@media (min-width: 768px) {
   .large-Grid--fit > .Grid-cell {
     flex: 1;
   }

@@ -15,6 +15,7 @@
 .Site-header,
 .Site-footer {
   flex: none; /* 2 */
+  border-bottom: 1px solid #ddd;
 }
 
 .Site-content {
