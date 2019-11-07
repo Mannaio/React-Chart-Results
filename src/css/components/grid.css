@@ -108,6 +108,8 @@
     flex: 0 0 25%;
   }
 }
+/* @media (var(--break-lg)) */
+/* @media (min-width: var(--break-lg)) */
 
 @media (min-width: 768px) {
   .large-Grid--fit > .Grid-cell {

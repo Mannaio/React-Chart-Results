@@ -1,27 +1,27 @@
 import React from "react";
 
 const Table = () => (
-	<table class="ui celled table">
-	  <thead class="">
-	    <tr class="">
-				<th class=""></th>
-	      <th class="">Win</th>
-	      <th class="">Draw</th>
-	      <th class="">Lose</th>
+	<table className="ui celled table">
+	  <thead className="">
+	    <tr className="">
+				<th className=""></th>
+	      <th className="">Win</th>
+	      <th className="">Draw</th>
+	      <th className="">Lose</th>
 	    </tr>
 	  </thead>
-	  <tbody class="">
-	    <tr class="">
-	      <td class="">Home</td>
-	      <td class="">0</td>
-	      <td class="">-2</td>
-				<td class="">-3</td>
+	  <tbody className="">
+	    <tr className="">
+	      <td className="">Home</td>
+	      <td className="">0</td>
+	      <td className="">-2</td>
+				<td className="">-3</td>
 	    </tr>
-	    <tr class="">
-				<td class="">Away</td>
-				<td class="">2</td>
-				<td class="">0</td>
-				<td class="">-1</td>
+	    <tr className="">
+				<td className="">Away</td>
+				<td className="">2</td>
+				<td className="">0</td>
+				<td className="">-1</td>
 	    </tr>
 	  </tbody>
 	</table>
