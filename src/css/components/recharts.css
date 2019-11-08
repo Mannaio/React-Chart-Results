@@ -1,10 +1,13 @@
-.recharts-legend-wrapper {
-  width: 370px !important;
-  bottom: 0;
-}
+@media (max-width: 768px) {
 
-.recharts-wrapper > .recharts-surface {
-  position: absolute;
-  top: 10px;
-  left: -60px;
+  .recharts-legend-wrapper {
+    width: 370px !important;
+    bottom: -5px;
+  }
+
+  .recharts-wrapper > .recharts-surface {
+    position: absolute;
+    top: 10px;
+    left: -60px;
+  }
 }

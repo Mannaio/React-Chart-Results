@@ -4,6 +4,13 @@
 }
 
 .Stats-container {
-  margin-top: 30px;
   text-align: left;
+}
+
+.Select-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 75%;
+  margin-bottom: 10px;
 }

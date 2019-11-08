@@ -79,27 +79,30 @@ class App extends React.Component {
           <div className="container">
             <div className="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
               <div className="Grid-cell">
-                League
-                <select
-                  value={this.state.selectedLeague}
-                  onChange={this.handleLeagueChange}
-                >
-                  {leagueOptions}
-                </select>
-                  Home
-                <select
-                  value={this.state.selectedHomeTeam}
-                  onChange={this.handleHomeTeamChange}
-                >
-                  {getTeams(this.state.selectedLeague)}
-                </select>
-                  Away
-                <select
-                  value={this.state.selectedAwayTeam}
-                  onChange={this.handleAwayTeamChange}
-                >
-                  {getTeams(this.state.selectedLeague)}
-                </select>
+                <h2>Pick the League and Teams</h2>
+                <div className="Select-Container">
+                  <label>League</label>
+                  <select
+                    value={this.state.selectedLeague}
+                    onChange={this.handleLeagueChange}
+                  >
+                    {leagueOptions}
+                  </select>
+                  <label>Home</label>
+                  <select
+                    value={this.state.selectedHomeTeam}
+                    onChange={this.handleHomeTeamChange}
+                  >
+                    {getTeams(this.state.selectedLeague)}
+                  </select>
+                  <label>Away</label>
+                  <select
+                    value={this.state.selectedAwayTeam}
+                    onChange={this.handleAwayTeamChange}
+                  >
+                    {getTeams(this.state.selectedLeague)}
+                  </select>
+                </div>
                 <LineChart
                   width={500}
                   height={300}
@@ -124,7 +127,7 @@ class App extends React.Component {
                   <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
                   <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
                   <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
-                  <p>Stronger Team:<span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
+                  <p>Stronger Team: <span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
                 </div>
               </div>
             </div>
