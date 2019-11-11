@@ -123,11 +123,11 @@ class App extends React.Component {
               <div className="Grid-cell">
                 <div className="Stats-container">
                   <h2>Statistics</h2>
-                  <p>Home Team: <span className="strong-red">{this.state.selectedHomeTeam}</span></p>
-                  <p>Away Team: <span className="strong-blue">{this.state.selectedAwayTeam}</span></p>
+                  <p>Home Team: <span className="u-strong">{this.state.selectedHomeTeam}</span></p>
+                  <p>Away Team: <span>{this.state.selectedAwayTeam}</span></p>
                   <p>Average {this.state.selectedHomeTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedHomeTeam)}</span></p>
                   <p>Average {this.state.selectedAwayTeam}: <span className="strong">{getAverage(scores[this.state.selectedLeague], this.state.selectedAwayTeam)}</span></p>
-                  <p>Stronger Team: <span className="strong-red">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
+                  <p>Stronger Team: <span className="u-strong">{maxAverage(this.state.selectedLeague,[this.state.selectedHomeTeam,this.state.selectedAwayTeam])}</span></p>
                 </div>
               </div>
             </div>
