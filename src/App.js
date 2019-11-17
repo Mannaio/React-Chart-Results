@@ -1,10 +1,10 @@
 import React from "react";
 import { scores } from './utils/TeamStats';
-import Table from "./components/Table";
-
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
+import Table from './components/Table';
+import ItemsCarousel from 'react-items-carousel';
+import styled from 'styled-components';
+import range from 'lodash/range';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 const data = {
   Liga: ['Alaves','Atletico', 'Barcelona', 'Betis', 'Bilbao', 'Celta', 'Espanyol', 'Getafe', 'Granada', 'Leganes', 'Levante', 'Eibar', 'Mallorca', 'Osasuna', 'Real', 'Sevilla', 'Sociedad', 'Valencia', 'Valladolid', 'Villareal'],
@@ -41,12 +41,55 @@ const maxAverage = (league, teams) => {
   }).reduce((a,b)=>a.avg>b.avg?a:b).team
 }
 
+const noOfItems = 12;
+const noOfCards = 3;
+const autoPlayDelay = 2000;
+const chevronWidth = 40;
 
-class App extends React.Component {
+const Wrapper = styled.div`
+  padding: 0 ${chevronWidth}px;
+  max-width: 1000px;
+  margin: 0 auto;
+`;
+
+const SlideItem = styled.div`
+  height: 200px;
+  background: #EEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const carouselItems = range(noOfItems).map(index => (
+  <SlideItem key={index}>
+    {index+1}
+  </SlideItem>
+));
+
+
+export default class App extends React.Component  {
   state = {
     selectedLeague: leagues[0],
+    activeItemIndex: 0,
     scores
   };
+
+
+  componentDidMount() {
+    this.interval = setInterval(this.tick, autoPlayDelay);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  tick = () => this.setState(prevState => ({
+    activeItemIndex: (prevState.activeItemIndex + 1) % (noOfItems-noOfCards + 1),
+  }));
+
+  onChange = value => this.setState({ activeItemIndex: value });
 
   handleLeagueChange = event => {
     const selectedLeague = event.target.value;
@@ -139,6 +182,18 @@ class App extends React.Component {
                 <p>There are three things taken in consideration, the team playing at home, the team playing away and their english average. Based on that we can better predict the matches, gambling on the result which gives a closer score to the average team.
                 It is also important to consider looking at the team charts on the right that like in trade we are introducing some concepts as 'support', 'resistance' and 'consolidation'. Any team on his way has to face this. What does it mean? This means that we also have to take in consideration that the teams have to rest or react at some stages. This can be seen in the charts as an horizontal / flat step before going up or down again.</p>
                 <h3>Tips</h3>
+                <Wrapper>
+                  <ItemsCarousel
+                    gutter={12}
+                    numberOfCards={noOfCards}
+                    activeItemIndex={this.state.activeItemIndex}
+                    requestToChangeActive={this.onChange}
+                    rightChevron={<button>{'>'}</button>}
+                    leftChevron={<button>{'<'}</button>}
+                    chevronWidth={chevronWidth}
+                    children={carouselItems}
+                  />
+                </Wrapper>
               </div>
             </div>
           </div>
@@ -147,5 +202,3 @@ class App extends React.Component {
     );
   }
 }
-
-export default App;
