@@ -70,11 +70,14 @@ li {
   margin-bottom: 0.333em;
 }
 
-
 figure {
   margin: 0;
 }
 
 strong {
   font-weight: 600;
+}
+
+label {
+  margin: 0 5px;
 }

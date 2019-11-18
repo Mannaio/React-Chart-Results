@@ -5,6 +5,10 @@
     bottom: -5px;
   }
 
+  .recharts-wrapper {
+    width: auto !important;
+  }
+
   .recharts-wrapper > .recharts-surface {
     position: absolute;
     top: 10px;

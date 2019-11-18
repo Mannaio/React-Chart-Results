@@ -76,7 +76,6 @@ export default class App extends React.Component  {
     scores
   };
 
-
   componentDidMount() {
     this.interval = setInterval(this.tick, autoPlayDelay);
   }
@@ -120,7 +119,7 @@ export default class App extends React.Component  {
         </header>
         <main className="Site-content">
           <div className="container">
-            <div className="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
+            <div className="Grid Grid--full large-Grid--fit u-textCenter">
               <div className="Grid-cell">
                 <h2>Pick the League and Teams</h2>
                 <div className="Select-Container">
@@ -174,7 +173,7 @@ export default class App extends React.Component  {
                 </div>
               </div>
             </div>
-            <div className="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
+            <div className="Grid Grid--full large-Grid--fit u-textCenter">
               <div className="Grid-cell">
                 <p>Description: The trend is established using the <a href="https://it.wikipedia.org/wiki/Media_inglese" target="blank">English Average calculation</a></p>
                 <Table />
