@@ -12,7 +12,8 @@ export const scores = {
     { day: '10', Alaves: -8, Atletico: -3, Barcelona: 2, Betis: -10, Bilbao: -6, Celta: -10, Espanyol: -14, Getafe: -6, Granada: 1, Leganes:  -17, Levante: -4, Eibar: -8, Mallorca: -11, Osasuna: -4, Real: 1, Sevilla: -1, Sociedad: -1, Valencia: -6, Valladolid: -4, Villareal: -3},
     { day: '11', Alaves: -9, Atletico: -3, Barcelona: 2, Betis: -11, Bilbao: -7, Celta: -13, Espanyol: -12, Getafe: -7, Granada: 1, Leganes:  -17, Levante: -7, Eibar: -9, Mallorca: -12, Osasuna: -4, Real: 1, Sevilla: -1, Sociedad: 1, Valencia: -7, Valladolid: -4, Villareal: -3},
     { day: '12', Alaves: -11, Atletico: -3, Barcelona: 2, Betis: -11, Bilbao: -7, Celta: -14, Espanyol: -13, Getafe: -7, Granada: 0, Leganes:  -18, Levante: -5, Eibar: -9, Mallorca: -14, Osasuna: -4, Real: 1, Sevilla: -1, Sociedad: -2, Valencia: -9, Valladolid: -5, Villareal: -4},
-    { day: '13', Alaves: -12, Atletico: -3, Barcelona: 1, Betis: -11, Bilbao: -7, Celta: -17, Espanyol: -16, Getafe: -5, Granada: -3, Leganes:  -21, Levante: -5, Eibar: -7, Mallorca: -15, Osasuna: -4, Real: -1, Sevilla: -3, Sociedad: 0, Valencia: -7, Valladolid: -5, Villareal: -6}
+    { day: '13', Alaves: -12, Atletico: -3, Barcelona: 1, Betis: -11, Bilbao: -7, Celta: -17, Espanyol: -16, Getafe: -5, Granada: -3, Leganes:  -21, Levante: -5, Eibar: -7, Mallorca: -15, Osasuna: -4, Real: -1, Sevilla: -3, Sociedad: 0, Valencia: -7, Valladolid: -5, Villareal: -6},
+    { day: '14', Alaves: -12, Atletico: -3, Barcelona: 1, Betis: -14, Bilbao: -7, Celta: -18, Espanyol: -17, Getafe: -7, Granada: -4, Leganes:  -21, Levante: -6, Eibar: -10, Mallorca: -15, Osasuna: -4, Real: 1, Sevilla: -1, Sociedad: -2, Valencia: -7, Valladolid: -6, Villareal: -7}
   ],
   Seriea: [
     { day: '1', Atalanta: 0, Bologna: 0, Brescia: 0, Cagliari: 0, Fiorentina: 0, Genoa: 0, Inter: 0, Juventus: 0, Lazio: 0, Lecce: 0, Milan: 0, Napoli: 0, Parma: 0, Roma: 0, Sampdoria: 0, Sassuolo: 0, Spal: 0, Torino: 0, Udinese: 0, Verona: 0},
@@ -26,6 +27,7 @@ export const scores = {
     { day: '9', Atalanta: 3, Bologna: -5, Brescia: -6, Cagliari: -4, Fiorentina: -4, Genoa: -11, Inter: 5, Juventus: 6, Lazio: -4, Lecce: -7, Milan: -6, Napoli: 0, Parma: -6, Roma: -3, Sampdoria:  -12, Sassuolo: -9, Spal: -10, Torino: -6, Udinese: -8, Verona: -7},
     { day: '10', Atalanta: 3, Bologna: -5, Brescia: -7, Cagliari: -4, Fiorentina: -7, Genoa: -11, Inter: 3, Juventus: 6, Lazio: -2, Lecce: -9, Milan: -7, Napoli: 0, Parma: -6, Roma: -3, Sampdoria:  -13, Sassuolo: -7, Spal: -12, Torino: -8, Udinese: -9, Verona: -10},
     { day: '11', Atalanta: 3, Bologna: -6, Brescia: -10, Cagliari: -4, Fiorentina: -5, Genoa: -12, Inter: 5, Juventus: 6, Lazio: -2, Lecce: -9, Milan: -7, Napoli: -2, Parma: -9, Roma: -1, Sampdoria:  -15, Sassuolo: -10, Spal: -13, Torino: -9, Udinese: -12, Verona: -8},
-    { day: '12', Atalanta: 0, Bologna: -9, Brescia: -11, Cagliari: -2, Fiorentina: -7, Genoa: -15, Inter: 7, Juventus: 8, Lazio: 0, Lecce: -11, Milan: -9, Napoli: -3, Parma: -9, Roma: -1, Sampdoria:  -13, Sassuolo: -10, Spal: -16, Torino: -12, Udinese: -10, Verona: -8},
+    { day: '12', Atalanta: 0, Bologna: -9, Brescia: -11, Cagliari: -2, Fiorentina: -7, Genoa: -15, Inter: 7, Juventus: 8, Lazio: 0, Lecce: -11, Milan: -10, Napoli: -3, Parma: -9, Roma: -1, Sampdoria:  -13, Sassuolo: -10, Spal: -16, Torino: -12, Udinese: -10, Verona: -8},
+    { day: '13', Atalanta: 0, Bologna: -10, Brescia: -14, Cagliari: -2, Fiorentina: -8, Genoa: -15, Inter: 7, Juventus: 8, Lazio: 0, Lecce: -12, Milan: -11, Napoli: -5, Parma: -9, Roma: -2, Sampdoria:  -15, Sassuolo: -10, Spal: -16, Torino: -10, Udinese: -12, Verona: -9}
   ]
 };
